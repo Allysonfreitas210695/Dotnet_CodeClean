@@ -1,0 +1,15 @@
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\bin\Debug\net7.0\CleanArchMvc.Application.deps.json
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\bin\Debug\net7.0\CleanArchMvc.Application.dll
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\bin\Debug\net7.0\CleanArchMvc.Application.pdb
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\bin\Debug\net7.0\CleanArchMvc.Domain.dll
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\bin\Debug\net7.0\CleanArchMvc.Domain.pdb
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.csproj.AssemblyReference.cache
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.AssemblyInfoInputs.cache
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.AssemblyInfo.cs
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.csproj.CoreCompileInputs.cache
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.csproj.CopyComplete
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.dll
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\refint\CleanArchMvc.Application.dll
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\CleanArchMvc.Application.pdb
+C:\Users\alisi\OneDrive\Área de Trabalho\Back-end\CleanArchMvc.Application\obj\Debug\net7.0\ref\CleanArchMvc.Application.dll
