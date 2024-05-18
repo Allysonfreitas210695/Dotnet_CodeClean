@@ -1,0 +1,143 @@
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.dll
+*.so
+*.dylib
+*.exe
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.dll
+*.dylib
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Object files
+*.o
+*.obj
+*.elf
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# Visual Studio
+.vs/
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Xamarin
+*.xamarin*
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Mac
+*.DS_Store
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+.idea_modules/
+*.iws
+*.iml
+*.ipr
+
+# Rider local history
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries
+.idea/gradle.xml
+.idea/compiler.xml
+
+# Rider configuration folder
+.idea/
+
+# Other IDEs
+.cache/
+# e.g., projectname.ipr, projectname.iws, projectname.iml, projectname.idea/
+*.iws
+*.iml
+*.ipr
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Business Intelligence files
+*.rdl.data
+*.bim.layout
+*.bim_*.json
+
+# Microsoft Office temporary files
+~$*
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
