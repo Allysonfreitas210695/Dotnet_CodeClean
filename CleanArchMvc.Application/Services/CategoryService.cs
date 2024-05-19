@@ -52,11 +52,11 @@ namespace CleanArchMvc.Application.Services
             }
         }
 
-        public async Task Remove(CategoryDto category)
+        public async Task Remove(int id)
         {
             try
             {
-                await categoryRepository.RemoveAsync(mapper.Map<Category>(category));
+                await categoryRepository.RemoveAsync(id);
             }
             catch (System.Exception ex)
             {

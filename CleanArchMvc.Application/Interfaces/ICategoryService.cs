@@ -8,6 +8,6 @@ namespace CleanArchMvc.Application.Interfaces
         Task<CategoryDto> GetById(int? id);
         Task Add(CategoryDto category);
         Task Update(CategoryDto category);
-        Task Remove(CategoryDto category);
+        Task Remove(int id);
     }
 }
