@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Domain.Interfaces;
 using CleanArchMvc.Infra.Data.Context;
@@ -36,18 +32,6 @@ namespace CleanArchMvc.Infra.Data.Repositories
         {
             try
             {
-                return await context.Products.FindAsync(id);
-            }
-            catch (Exception ex)
-            {
-                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
-            }
-        }
-
-        public async Task<Product> GetProductCategoryAsync(int? id)
-        {
-            try
-            {
                 return await context.Products.Where(x => x.Id == id).Include(x => x.Category).FirstAsync();
             }
             catch (Exception ex)
@@ -68,10 +52,11 @@ namespace CleanArchMvc.Infra.Data.Repositories
             }
         }
 
-        public async Task<Product> RemoveAsync(Product product)
+        public async Task<Product> RemoveAsync(int id)
         {
             try
             {
+                var product = await context.Products.FirstOrDefaultAsync(x => x.Id == id);
                 context.Remove(product);
                 await context.SaveChangesAsync();
                 return product;

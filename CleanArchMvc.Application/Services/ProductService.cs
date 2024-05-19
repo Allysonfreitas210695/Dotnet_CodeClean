@@ -1,94 +1,94 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using CleanArchMvc.Application.Dtos;
 using CleanArchMvc.Application.Interfaces;
+using CleanArchMvc.Application.Products.Commands;
+using CleanArchMvc.Application.Products.Queries;
 using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Domain.Interfaces;
+using MediatR;
 
 namespace CleanArchMvc.Application.Services
 {
     public class ProductService : IProductService
     {
         private readonly IMapper mapper;
-        private readonly IProductRepository productRepository;
-        public ProductService(IMapper mapper, IProductRepository productRepository)
+        private readonly IMediator mediator;
+        public ProductService(IMapper mapper, IMediator mediator)
         {
             this.mapper = mapper;
-            this.productRepository = productRepository;
+            this.mediator = mediator;
         }
-
-        public async Task Add(ProductDto product)
+        public async Task<IEnumerable<ProductDto>> GetProducts()
         {
              try
             {
-                await productRepository.CreateAsync(mapper.Map<Product>(product));
+                var productQuery = new GetProductsQuery();
+
+                if(productQuery == null)
+                    throw new ArgumentNullException("Entity could not be loaded");
+
+                var result = await mediator.Send(productQuery);
+                return mapper.Map<IEnumerable<ProductDto>>(result);
             }
             catch (System.Exception ex)
             {
                  throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
+            }
+        }
+
+        public async Task Add(ProductDto product)
+        {
+            try
+            {
+                var productCreateCommand = mapper.Map<ProductCreateCommand>(product);
+                await mediator.Send(productCreateCommand);
+            }
+            catch (System.Exception ex)
+            {
+                throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
             }
         }
 
         public async Task<ProductDto> GetById(int? id)
         {
-             try
+            try
             {
-                return mapper.Map<ProductDto>(await productRepository.GetByIdAsync(id));
+                var productEntity = new GetProductByIdQuery(id.Value);
+                if (productEntity == null)
+                    throw new ArgumentNullException("Entity could not br loaded");
+
+                var result = mediator.Send(productEntity);
+                return mapper.Map<ProductDto>(result);
             }
             catch (System.Exception ex)
             {
-                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
+                throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
             }
         }
 
-        public async Task<ProductDto> GetProductCategory(int? id)
+        public async Task Remove(int id)
         {
-             try
+            try
             {
-                return mapper.Map<ProductDto>(await productRepository.GetProductCategoryAsync(id));
+                var productRemoveCommand = new ProductRemoveCommand(id);
+                await mediator.Send(productRemoveCommand);
             }
             catch (System.Exception ex)
             {
-                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
-            }
-        }
-
-        public async Task<IEnumerable<ProductDto>> GetProducts()
-        {
-             try
-            {
-                return mapper.Map<IEnumerable<ProductDto>>(await productRepository.GetProductsAsync());
-            }
-            catch (System.Exception ex)
-            {
-                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
-            }
-        }
-
-        public async Task Remove(ProductDto product)
-        {
-             try
-            {
-                await productRepository.RemoveAsync(mapper.Map<Product>(product));
-            }
-            catch (System.Exception ex)
-            {
-                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
+                throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
             }
         }
 
         public async Task Update(ProductDto product)
         {
-             try
+            try
             {
-                await productRepository.UpdateAsync(mapper.Map<Product>(product));            
+                var productUpdateCommand = mapper.Map<ProductUpdateCommand>(product);
+                await mediator.Send(productUpdateCommand);
             }
             catch (System.Exception ex)
             {
-                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
+                throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
             }
         }
     }
