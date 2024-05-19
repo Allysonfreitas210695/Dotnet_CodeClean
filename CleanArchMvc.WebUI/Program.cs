@@ -1,3 +1,5 @@
+using CleanArchMvc.Domain.Account;
+using CleanArchMvc.Infra.Data.IdentityContext;
 using CleanArchMvc.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,8 @@ builder.Services.AddInfraestrutura("Server=DESKTOP-NDSKUV4;Initial Catalog=Clean
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Registre a classe SeedUserRoleInitial
+builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
 
 var app = builder.Build();
 
@@ -24,10 +28,20 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var seedUserRoleInitial = services.GetRequiredService<ISeedUserRoleInitial>();
+    seedUserRoleInitial.SeedRoles();
+    seedUserRoleInitial.SeedUsers();
+}
 
 app.Run();
