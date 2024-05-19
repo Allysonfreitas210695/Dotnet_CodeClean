@@ -5,7 +5,7 @@ using MediatR;
 
 namespace CleanArchMvc.Application.Products.Handlers
 {
-    public class ProductRemoveCommandHandler : IRequestHandler<ProductUpdateCommand, Product>
+    public class ProductRemoveCommandHandler : IRequestHandler<ProductRemoveCommand, Product>
     {
         private readonly IProductRepository _productRepository;
         public ProductRemoveCommandHandler(IProductRepository productRepository)
@@ -13,7 +13,7 @@ namespace CleanArchMvc.Application.Products.Handlers
             this._productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
         }
 
-        public async Task<Product> Handle(ProductUpdateCommand request, CancellationToken cancellationToken)
+        public async Task<Product> Handle(ProductRemoveCommand request, CancellationToken cancellationToken)
         {
             var product = await _productRepository.GetByIdAsync(request.Id);
             if (product == null) throw new ArgumentNullException("Entity could not be found");

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0NWvnZqjc/DUzJ9cxxkQqerBhZzECL5j1AjJyheEyqE=",
+  "Hash": "3R+JJYDt7vvPFhg4ytJEhQ4kuABJp/dCyRdVhOiRgwQ=",
   "Source": "CleanArchMvc.WebUI",
   "BasePath": "_content/CleanArchMvc.WebUI",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\Images\\image.jpg",
+      "SourceId": "CleanArchMvc.WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\",
+      "BasePath": "_content/CleanArchMvc.WebUI",
+      "RelativePath": "Images/image.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\image.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\Images\\noimage.png",
+      "SourceId": "CleanArchMvc.WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\",
+      "BasePath": "_content/CleanArchMvc.WebUI",
+      "RelativePath": "Images/noimage.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\noimage.png"
     },
     {
       "Identity": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\js\\site.js",

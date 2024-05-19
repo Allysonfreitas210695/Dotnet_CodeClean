@@ -49,18 +49,21 @@ namespace CleanArchMvc.Application.Services
             }
         }
 
-        public async Task<ProductDto> GetById(int? id)
+        public async Task<ProductDto> GetById(int id)
         {
             try
             {
-                var productEntity = new GetProductByIdQuery(id.Value);
+                var productQuery = new GetProductByIdQuery(id);
+                var productEntity = await mediator.Send(productQuery);
                 if (productEntity == null)
-                    throw new ArgumentNullException("Entity could not br loaded");
+                {
+                    throw new ArgumentNullException("Entity could not be loaded");
+                }
 
-                var result = mediator.Send(productEntity);
-                return mapper.Map<ProductDto>(result);
+                var result = mapper.Map<ProductDto>(productEntity);
+                return result;
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 throw new ArgumentException(ex?.InnerException?.Message ?? ex.Message);
             }

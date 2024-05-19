@@ -18,7 +18,7 @@ namespace CleanArchMvc.Infra.Data.Repositories
         {
             try
             {
-                context.Remove(product);
+                context.Add(product);
                 await context.SaveChangesAsync();
                 return product;
             }
@@ -28,11 +28,12 @@ namespace CleanArchMvc.Infra.Data.Repositories
             }
         }
 
-        public async Task<Product> GetByIdAsync(int? id)
+        public async Task<Product> GetByIdAsync(int id)
         {
             try
             {
-                return await context.Products.Where(x => x.Id == id).Include(x => x.Category).FirstAsync();
+                var product = await context.Products.Where(x => x.Id == id).Include(x => x.Category).AsNoTracking().FirstOrDefaultAsync();
+                return product;
             }
             catch (Exception ex)
             {

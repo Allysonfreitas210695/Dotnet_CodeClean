@@ -93,5 +93,17 @@ namespace CleanArchMvc.WebUI.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpGet("Details")]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var categoriyDto = await _categoryService.GetById(id);
+
+            if (categoriyDto == null) return NotFound();
+
+            return View(categoriyDto);
+        }
     }
 }

@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\CleanArchMvc.WebUI.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\Images\\image.jpg",
+      "PackagePath": "staticwebassets\\Images\\image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\Images\\noimage.png",
+      "PackagePath": "staticwebassets\\Images\\noimage.png"
+    },
+    {
       "Id": "C:\\Users\\alisi\\OneDrive\\Área de Trabalho\\Back-end\\CleanArchMvc.WebUI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
